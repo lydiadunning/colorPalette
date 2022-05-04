@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palette</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+  <div>
+    <img src='/{{ image }}' class="img-fluid" alt="provided image">
+    <h1>Color Palette:</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for i in range(color_count) %}
+      <div class="col">
+        <div class="card" style="background-color:{{ hex_colors[i] }}">
+          <h5 class="card-title"><br><br>{{ hex_colors[i] }}</h5>
+          <h5 class="card-title">{{ rgb_colors[i] }}<br></h5>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
